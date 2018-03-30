@@ -1,5 +1,7 @@
 <?php
-$jsonArray = file_get_contents('http://api.openweathermap.org/data/2.5/weather?q=Rostov-on-Don&appid=e117e6ab126792a3b7f473e009ed4984');
+$city = 'Rostov-on-Don';
+$apiKey = 'e117e6ab126792a3b7f473e009ed4984';
+$jsonArray = file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey");
 $weatherArray = json_decode($jsonArray, true);
 
 $cityName = $weatherArray['name'];
